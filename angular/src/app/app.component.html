@@ -3,7 +3,9 @@
         [dataSource]="employees"
         [collapsible]="true"
         [multiple]="true"
-        animationDuration="450"
+        [animationDuration]="450"
+        itemTemplate="item"
+        itemTitleTemplate="title"
     >
         <div *dxTemplate="let data of 'title'">
             {{ data.FirstName + " " + data.LastName }}

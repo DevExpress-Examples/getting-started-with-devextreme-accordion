@@ -4,7 +4,9 @@
             :data-source="employees"
             :collapsible="true"
             :multiple="true"
-            animation-duration="450"
+            :animation-duration="450"
+            item-template="item"
+            item-title-template="title"
         >
             <template #title="{ data }">
                 {{ data.FirstName + " " + data.LastName }}
