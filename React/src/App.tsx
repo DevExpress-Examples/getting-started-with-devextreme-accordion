@@ -42,13 +42,13 @@ const employees: Employee[] = [
   },
 ];
 
-const customTitle = (data: Employee): string => {
+function customTitle(data: Employee): string {
   return `${data.FirstName} ${data.LastName}`;
-};
+}
 
-const customItem = (data: Employee): string => {
+function customItem(data: Employee): string {
   return `${data.Position} from ${data.State}`;
-};
+}
 
 function App(): JSX.Element {
   return (

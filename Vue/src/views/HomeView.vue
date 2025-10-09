@@ -3,6 +3,6 @@ import AccordionContent from '../components/AccordionContent.vue';
 </script>
 
 <template>
-  <AccordionContent />
+  <AccordionContent/>
 </template>
 
