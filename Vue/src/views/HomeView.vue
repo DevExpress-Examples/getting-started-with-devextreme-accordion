@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import HomeContent from '../components/HomeContent.vue';
+import AccordionContent from '../components/AccordionContent.vue';
 </script>
 
 <template>
-  <HomeContent text="Count"/>
+  <AccordionContent />
 </template>
 

@@ -1,7 +1,7 @@
-import './App.css';
+<script setup lang="ts">
 import 'devextreme/dist/css/dx.material.blue.light.compact.css';
-import Accordion from 'devextreme-react/accordion';
-import type { Employee } from './types';
+import DxAccordion from 'devextreme-vue/accordion';
+import type { Employee } from '../types';
 
 const employees: Employee[] = [
   {
@@ -41,28 +41,30 @@ const employees: Employee[] = [
     BirthDate: '1977/11/22',
   },
 ];
+</script>
 
-const customTitle = (data: Employee): string => {
-  return `${data.FirstName} ${data.LastName}`;
-};
+<template>
+  <div id="container">
+    <DxAccordion
+      :data-source="employees"
+      :collapsible="true"
+      :multiple="true"
+      :animation-duration="450"
+      item-template="item"
+      item-title-template="title"
+    >
+      <template #title="{ data }">
+        {{ data.FirstName + ' ' + data.LastName }}
+      </template>
+      <template #item="{ data }">
+        {{ data.Position + ' from ' + data.State }}
+      </template>
+    </DxAccordion>
+  </div>
+</template>
 
-const customItem = (data: Employee): string => {
-  return `${data.Position} from ${data.State}`;
-};
-
-function App(): JSX.Element {
-  return (
-    <div id="container">
-      <Accordion
-        dataSource={employees}
-        collapsible={true}
-        multiple={true}
-        animationDuration={450}
-        itemTitleRender={customTitle}
-        itemRender={customItem}
-      />
-    </div>
-  );
+<style scoped>
+#container {
+  width: 40%;
 }
-
-export default App;
+</style>
