@@ -40,11 +40,13 @@ const employees: Employee[] = [
   },
 ];
 
+import { DxAccordionModule } from 'devextreme-angular/ui/accordion';
+
 @Component({
     selector: 'app-root',
+    imports: [DxAccordionModule],
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.scss'],
-    standalone: false
 })
 export class AppComponent {
   employees: Employee[] = employees;
