@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import type { Employee } from './app.types';
 
 const employees: Employee[] = [
@@ -46,6 +46,7 @@ import { DxAccordionModule } from 'devextreme-angular/ui/accordion';
     selector: 'app-root',
     imports: [DxAccordionModule],
     templateUrl: './app.component.html',
+    changeDetection: ChangeDetectionStrategy.Eager,
     styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
